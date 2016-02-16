@@ -44,9 +44,11 @@ This example supports the following REST-ful end points
 - http://localhost:8088/api = root level check to make sure the API is running
 - http://localhost:8088/api/tasks = gets all tasks
 - http://localhost:8088/api/task/:task_id = gets tasks by id
+
 	http://localhost:8088/api/task/5
+
 - http://localhost:8088/api/tasks/user/:user_id = gets tasks by user_id
+
 	http://localhost:8088/api/tasks/user/1
 
 Note: all of the API end points are prefixed with '/api'.
-
