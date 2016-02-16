@@ -52,10 +52,8 @@ router.route(routes.ROUTE_TASKS)
                 console.log('Error:', result.message);
             }
             else {
-                console.log(result);
                 res.json(result);
             }
-
         });
     });
 
@@ -68,7 +66,6 @@ router.route(routes.ROUTE_TASK_BY_ID)
                 console.log('Error:', result.message);
             }
             else {
-                console.log(result);
                 res.json(result);
             }
         });
@@ -85,7 +82,6 @@ router.route(routes.ROUTE_TASKS_BY_USER_ID)
                 console.log('Error:', result.message);
             }
             else {
-                console.log(result);
                 res.json(result);
             }
         });
@@ -99,6 +95,6 @@ router.get('/', function(req, res) {
 // Register our routes ... all routes will be prefixed with /api
 app.use(consts.ROUTE_PREFIX, router);
 
-// Start the server on the assigned PORT
+// Start the server on the assigned PORT and log message to consoles
 app.listen(port);
 console.log(msgs.NESSEN_SERVER_STARTED_SUCCESS + consts.PORT);
