@@ -75,7 +75,7 @@ router.route(routes.ROUTE_TASK_BY_ID)
     });
 
 // Get tasks by user_id
-router.route('/tasks/user/:user_id')
+router.route(routes.ROUTE_TASKS_BY_USER_ID)
     .get(function(req, res) {
         var url = consts.ROOT + consts.USERS + '/' + req.params.user_id + consts.TODOS;
         console.log('URL = ' + url);
