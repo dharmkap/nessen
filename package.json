@@ -1,0 +1,12 @@
+{
+	"name": "nessen",
+	"main": "server.js",
+	"dependencies":
+	{
+		"express": "~4.13.4",
+		"mongoose": "~4.4.3",
+		"body-parser": "~1.15.0",
+        "method-override": "~2.3.5",
+        "restler": "~3.4.0"
+	}
+}

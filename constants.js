@@ -1,0 +1,12 @@
+exports.URI = 'mongodb://localhost/nessen';
+exports.PORT = 8088;
+exports.POOL_SIZE = 5;
+exports.ROUTE_PREFIX = '/api';
+exports.ROOT = 'http://jsonplaceholder.typicode.com';
+exports.TODO =  '/todo';
+exports.TODOS = '/todos';
+exports.USERS = '/users';
+exports.COMPLETE = 'complete';
+exports.SUCCESS = 'success';
+exports.ERROR = 'error';
+exports.OPEN = 'open';
