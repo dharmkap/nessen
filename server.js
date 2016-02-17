@@ -1,9 +1,11 @@
 // Required packages
 var express = require('express');
 
-var bodyParser = require('body-parser');
-// var mongoose = require('mongoose');
+var bodyParser = require('body-parser');            // pull information from HTML POST (express4)
+var mongoose = require('mongoose');
 var restler = require('restler');
+var morgan = require('morgan');
+var methodOverride = require('method-override');    // simulate DELETE and PUT (express4)
 
 // Required project files
 var consts = require('./constants');
@@ -11,14 +13,19 @@ var msgs = require('./messages');
 var routes = require('./routes');
 
 // Required model for Tasks
-// var Task = require('./models/task');
+var Task = require('./models/task');
 
 // Create the connection to Express
 var app = express();
 
+// Log every request to the console
+app.use(morgan('dev'));
+
 // Configure the app to use bodyParser
-app.use(bodyParser.urlencoded({ extended: true} ));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
+app.use(bodyParser.json());                                     // parse application/json
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
+app.use(methodOverride());
 
 // Set our REST API port
 var port = process.env.PORT || consts.PORT;
@@ -92,7 +99,7 @@ router.get('/', function(req, res) {
 	res.json({ message: 'Nessen REST API GET success!' });
 });
 
-// Register our routes ... all routes will be prefixed with /api
+// Register our routes ... all routes will be prefixed with consts.ROUTE_PREFIX
 app.use(consts.ROUTE_PREFIX, router);
 
 // Start the server on the assigned PORT and log message to consoles

@@ -1,12 +1,18 @@
 {
-	"name": "nessen",
-	"main": "server.js",
-	"dependencies":
-	{
-		"express": "~4.13.4",
-		"mongoose": "~4.4.3",
-		"body-parser": "~1.15.0",
-        "method-override": "~2.3.5",
-        "restler": "~3.4.0"
-	}
+  "name": "nessen",
+  "version": "0.1.0",
+  "description": "NodeJS REST-ful services",
+  "main": "server.js",
+  "author": "Dharm Kapadia",
+  "repository": "",
+  "license": "",
+  "dependencies":
+  {
+    "express": "~4.13.4",
+    "mongoose": "~4.4.3",
+    "morgan": "~1.6.1",
+    "body-parser": "~1.15.0",
+    "method-override": "~2.3.5",
+    "restler": "~3.4.0"
+  }
 }
