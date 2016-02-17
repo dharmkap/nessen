@@ -2,7 +2,7 @@
 var express = require('express');
 
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var restler = require('restler');
 
 // Required project files
@@ -10,8 +10,8 @@ var consts = require('./constants');
 var msgs = require('./messages');
 var routes = require('./routes');
 
-// Required models
-var Task = require('./models/task');
+// Required model for Tasks
+// var Task = require('./models/task');
 
 // Create the connection to Express
 var app = express();
@@ -44,7 +44,7 @@ var router = express.Router();
 // Routes for tasks
 
 // Get all tasks
-router.route(routes.ROUTE_TASKS)
+router.route(routes.ROUTE_GET_TASKS)
     .get(function(req, res) {
         var url = consts.ROOT + consts.TODOS;
         restler.get(url).on(consts.COMPLETE, function(result) {
@@ -58,7 +58,7 @@ router.route(routes.ROUTE_TASKS)
     });
 
 // Get task by task_id
-router.route(routes.ROUTE_TASK_BY_ID)
+router.route(routes.ROUTE_GET_TASK_BY_ID)
     .get(function(req, res) {
         var url = consts.ROOT + consts.TODOS + '/' + req.params.task_id;
         restler.get(url).on(consts.COMPLETE, function(result) {
@@ -72,7 +72,7 @@ router.route(routes.ROUTE_TASK_BY_ID)
     });
 
 // Get tasks by user_id
-router.route(routes.ROUTE_TASKS_BY_USER_ID)
+router.route(routes.ROUTE_GET_TASKS_BY_USER_ID)
     .get(function(req, res) {
         var url = consts.ROOT + consts.USERS + '/' + req.params.user_id + consts.TODOS;
         console.log('URL = ' + url);
