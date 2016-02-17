@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var restler = require('restler');
 var morgan = require('morgan');
 var methodOverride = require('method-override');    // simulate DELETE and PUT (express4)
+var cors = require("cors");
 
 // Required project files
 var consts = require('./constants');
@@ -20,6 +21,9 @@ var app = express();
 
 // Log every request to the console
 app.use(morgan('dev'));
+
+// Enable ALl CORS Requests for now
+app.use(cors());
 
 // Configure the app to use bodyParser
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
