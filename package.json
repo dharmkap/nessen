@@ -13,6 +13,7 @@
     "morgan": "~1.6.1",
     "body-parser": "~1.15.0",
     "method-override": "~2.3.5",
-    "restler": "~3.4.0"
+    "restler": "~3.4.0",
+    "cors": "~2.7.1"
   }
 }
